@@ -1,9 +1,22 @@
 local Booths_Broadcast = game:GetService("ReplicatedStorage").Network:WaitForChild("Booths_Broadcast")
 
-local function checklisting(uid, gems, item, version, shiny, amount, username, playerid, class)
+local function checklisting(uid, gems, item, version, shiny, amount, username, playerid)
+    local Library = require(rs:WaitForChild('Library'))
+    local purchase = rs.Network.Booths_RequestPurchase
     gems = tonumber(gems)
+    local ping = false
+    local type = {}
+    pcall(function()
+        type = Library.Directory.Pets[item]
+    end)
 
-      if item == "Chest Mimic" and price <= 200000 then
+    if amount == nil then
+        amount = 1
+    end
+
+    local price = gems / amount
+
+            if item == "Chest Mimic" and price <= 200000 then
         task.wait(3.05)
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
 	
@@ -51,29 +64,33 @@ local function checklisting(uid, gems, item, version, shiny, amount, username, p
     end
 end
 
+
 Booths_Broadcast.OnClientEvent:Connect(function(username, message)
-    local playerID = message['PlayerID']
-    if type(message) == "table" then
-        local listing = message["Listings"]
-        for key, value in pairs(listing) do
-            if type(value) == "table" then
-                local uid = key
-                local gems = value["DiamondCost"]
-                local itemdata = value["ItemData"]
+    local playerIDSuccess, playerError = pcall(function()
+	playerID = message['PlayerID']
+    end)
+    if playerIDSuccess then
+        if type(message) == "table" then
+            local listing = message["Listings"]
+            for key, value in pairs(listing) do
+                if type(value) == "table" then
+                    local uid = key
+                    local gems = value["DiamondCost"]
+                    local itemdata = value["ItemData"]
 
-                if itemdata then
-                    local data = itemdata["data"]
+                    if itemdata then
+                        local data = itemdata["data"]
 
-                    if data then
-                        local item = data["id"]
-                        local version = data["pt"]
-                        local shiny = data["sh"]
-                        local amount = data["_am"]
-                        local class = itemdata['class']
-                        checklisting(uid, gems, item, version, shiny, amount, username , playerID, class)
+                        if data then
+                            local item = data["id"]
+                            local version = data["pt"]
+                            local shiny = data["sh"]
+                            local amount = data["_am"]
+                            checklisting(uid, gems, item, version, shiny, amount, username, playerID)
+                        end
                     end
                 end
             end
-        end
+	end
     end
 end)
