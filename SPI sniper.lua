@@ -3,11 +3,11 @@ local Booths_Broadcast = game:GetService("ReplicatedStorage").Network:WaitForChi
 local function checklisting(uid, gems, item, version, shiny, amount, username, playerid, class)
     gems = tonumber(gems)
 
-   if item == "Chest Mimic" and gems <= 200000 then
+   if item == "Chest Mimic" and gems <= 250000 then
         task.wait(3.01)
           game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
 	
-   elseif item == "Diamond Chest Mimic" and gems <= 250000 then
+   elseif item == "Diamond Chest Mimic" and gems <= 500000 then
         task.wait(3.01)
           game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
 
@@ -15,11 +15,23 @@ local function checklisting(uid, gems, item, version, shiny, amount, username, p
         task.wait(3.01)
           game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
 
-   elseif item == "Lucky Block" and gems <= 100000 then
+   elseif item == "Lucky Block" and gems <= 250000 then
         task.wait(3.01)
           game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
 
-   elseif item == "Massive Commet" and gems <= 100000 then
+   elseif item == "Massive Commet" and gems <= 500000 then
+        task.wait(3.01)
+          game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
+
+   elseif item == "Super Lightning" and gems <= 250000 then
+        task.wait(3.01)
+          game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
+
+   elseif item == "Chest Breaker" and gems <= 100000 then
+        task.wait(3.01)
+          game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
+
+   elseif item == "Royalty" and gems <= 500000 then
         task.wait(3.01)
           game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
 		
@@ -48,6 +60,10 @@ local function checklisting(uid, gems, item, version, shiny, amount, username, p
         game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
 
    elseif item == "Charm Stone" and gems <= 40000 then
+        task.wait(3.01)
+        game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
+
+   elseif item == "The Cocktail" and gems <= 50000 then
         task.wait(3.01)
         game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
    
