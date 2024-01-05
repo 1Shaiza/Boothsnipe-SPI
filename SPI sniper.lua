@@ -3,63 +3,67 @@ local Booths_Broadcast = game:GetService("ReplicatedStorage").Network:WaitForChi
 local function checklisting(uid, gems, item, version, shiny, amount, username, playerid, class)
     gems = tonumber(gems)
 
-   if item == "Chest Mimic" and price <= 200000 then
+   if item == "Chest Mimic" and gems <= 200000 then
         task.wait(3.01)
           game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
 	
-   elseif item == "Diamond Chest Mimic" and price <= 250000 then
+   elseif item == "Diamond Chest Mimic" and gems <= 250000 then
         task.wait(3.01)
           game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
 
-   elseif item == "Fortune" and price <= 100000 then
+   elseif item == "Fortune" and gems <= 100000 then
         task.wait(3.01)
           game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
 
-   elseif item == "Lucky Block" and price <= 100000 then
+   elseif item == "Lucky Block" and gems <= 100000 then
         task.wait(3.01)
           game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
 
-   elseif item == "Massive Commet" and price <= 100000 then
+   elseif item == "Massive Commet" and gems <= 100000 then
         task.wait(3.01)
           game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
 		
-   elseif item == "Crystal Key" and price <= 15000 then
+   elseif item == "Crystal Key" and gems <= 15000 then
         task.wait(3.01)
           game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
 
-   elseif item == "Crystal Key Upper Half" and price <= 10000 then
+   elseif item == "Crystal Key Upper Half" and gems <= 10000 then
         task.wait(3.01)
         game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
 
-   elseif item == "Crystal Key Lower Half" and price <= 5000 then
+   elseif item == "Crystal Key Lower Half" and gems <= 5000 then
         task.wait(3.01)
         game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
 
-   elseif item == "Spinny Wheel Ticket" and price <= 5000 then
+   elseif item == "Spinny Wheel Ticket" and gems <= 5000 then
         task.wait(3.01)
         game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
 
-   elseif item == "Booth Slot Voucher" and price <= 25000 then
+   elseif item == "Booth Slot Voucher" and gems <= 25000 then
+        task.wait(3.01)
+        game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
+   
+   elseif item == "Bonus" and gems <= 20000 then
+	task.wait(3.01)
+        game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
+
+   elseif item == "Charm Stone" and gems <= 40000 then
         task.wait(3.01)
         game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
 
-   elseif item == "Charm Stone" and price <= 40000 then
-        task.wait(3.01)
-        game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
-
-   elseif class == "Enchant" and string.find(item, "VI") and price <= 25000 then
+   elseif class == "Enchant" and string.find(item, "VI") and gems <= 25000 then
         task.wait(3.01)
         game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
   
-   elseif class == "Enchant" and string.find(item, "VII") and price <= 75000 then
+   elseif class == "Enchant" and string.find(item, "VII") and gems <= 75000 then
         task.wait(3.01)
         game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
 
-   elseif string.find(item, "Potion VII") and price <= 25000 then
+   elseif string.find(item, "Potion VII") and gems <= 25000 then
         task.wait(3.01)
         game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
 
-  elseif string.find(item, "Potion VIII") and price <= 100000 then
+  elseif string.find(item, "Potion VIII") and gems <= 100000 then
         task.wait(3.01)
         game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
 
