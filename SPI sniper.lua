@@ -7,7 +7,7 @@ local function checklisting(uid, gems, item, version, shiny, amount, username, p
         task.wait(3.01)
           game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
 	
-   elseif item == "Diamond Chest Mimic" and gems <= 500000 then
+   elseif item == "Diamond Chest Mimic" and gems <= 200000 then
         task.wait(3.01)
           game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
 
