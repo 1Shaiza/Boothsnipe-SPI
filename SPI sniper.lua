@@ -54,8 +54,20 @@ local function checklisting(uid, gems, item, version, shiny, amount, username, p
    elseif item == "Booth Slot Voucher" and gems <= 25000 then
         task.wait(3.01)
         game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
+
+   elseif item == "Diamonds Charm" and gems <= 40000 then
+	task.wait(3.01)
+        game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
+
+   elseif item == "Glittering Charm" and gems <= 40000 then
+	task.wait(3.01)
+        game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
+
+   elseif item == "Coins Charm" and gems <= 20000 then
+	task.wait(3.01)
+        game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
    
-   elseif item == "Bonus" and gems <= 20000 then
+   elseif item == "Bonus Charm" and gems <= 10000 then
 	task.wait(3.01)
         game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
 
